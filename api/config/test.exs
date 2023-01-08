@@ -15,7 +15,7 @@ config :phoenix, :plug_init_mode, :runtime
 
 defmodule FFT.MockTruckFetcher do
   def fetch() do
-    "locationid,Applicant,FacilityType,cnn,LocationDescription,Address,blocklot,block,lot,permit,Status,FoodItems,X,Y,Latitude,Longitude,Schedule,dayshours,NOISent,Approved,Received,PriorPermit,ExpirationDate,Location,Fire Prevention Districts,Police Districts,Supervisor Districts,Zip Codes,Neighborhoods (old)\n42,Tasty Truck,Truck,,Market Street,,,,,,APPROVED,hot dogs pizza,,,37.794331003246846,-122.39581105302317,,,,,,,,,,,,,"
+    "locationid,Applicant,FacilityType,cnn,LocationDescription,Address,blocklot,block,lot,permit,Status,FoodItems,X,Y,Latitude,Longitude,Schedule,dayshours,NOISent,Approved,Received,PriorPermit,ExpirationDate,Location,Fire Prevention Districts,Police Districts,Supervisor Districts,Zip Codes,Neighborhoods (old)\n42,Tasty Truck,Truck,,Market Street,,,,,,APPROVED,hot dogs pizza,,,37.794331003246846,-122.39581105302317,,,,,,,,,,,,,\n43,Philly Street Meet,Truck,,Independence Street,,,,,,APPROVED,philly cheese steaks,,,37.784331703246846,-122.38581205302317,,,,,,,,,,,,,"
   end
 end
 

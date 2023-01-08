@@ -48,7 +48,8 @@ defmodule FFT.Services.FoodTruckData.Parser do
            _neighborhoods
          ],
          acc
-       ) do
+       )
+       when food_items != "" and location_description != "" do
     [
       %Truck{
         id: String.to_integer(location_id),

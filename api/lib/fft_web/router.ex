@@ -8,6 +8,7 @@ defmodule FFTWeb.Router do
   scope "/api", FFTWeb do
     pipe_through :api
 
-    resources "/trucks", TruckController, only: [:index]
+    post "/trucks", TruckController, :index
+    options "/trucks", TruckController, :index
   end
 end

@@ -39,7 +39,8 @@ defmodule FFT.MixProject do
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
       {:finch, "~> 0.14.0"},
-      {:nimble_csv, "~> 1.2"}
+      {:nimble_csv, "~> 1.2"},
+      {:cors_plug, "~> 1.2"}
     ]
   end
 

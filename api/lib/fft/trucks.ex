@@ -6,11 +6,14 @@ defmodule FFT.Trucks do
 
   ## Examples
 
-      iex> list()
+      iex> list("")
+      [%Truck{}, ...]
+
+      iex> list("pizza")
       [%Truck{}, ...]
 
   """
-  def list(data_store \\ FoodTruckData) do
-    data_store.list()
+  def list(filter, data_store \\ FoodTruckData) do
+    data_store.list(filter)
   end
 end

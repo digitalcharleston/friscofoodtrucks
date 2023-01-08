@@ -9,8 +9,8 @@ defmodule FFT.Services.FoodTruckData do
     GenServer.start_link(__MODULE__, [], name: __MODULE__)
   end
 
-  def list() do
-    GenServer.call(__MODULE__, :get_trucks)
+  def list(filter) when is_binary(filter) do
+    GenServer.call(__MODULE__, {:get_trucks, filter})
   end
 
   # Server
@@ -32,8 +32,20 @@ defmodule FFT.Services.FoodTruckData do
   end
 
   @impl true
-  def handle_call(:get_trucks, _from, trucks) do
+  def handle_call({:get_trucks, ""}, _from, trucks) do
     {:reply, trucks, trucks}
+  end
+
+  @impl true
+  def handle_call({:get_trucks, filter}, _from, trucks) do
+    filtered_trucks =
+      Enum.filter(trucks, fn truck ->
+        (truck.name <> truck.location <> truck.items)
+        |> String.downcase()
+        |> String.contains?(filter)
+      end)
+
+    {:reply, filtered_trucks, trucks}
   end
 
   defp fetch_trucks() do

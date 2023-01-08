@@ -1,10 +1,14 @@
 defmodule FFTWeb.TruckController do
   use FFTWeb, :controller
 
+  alias FFT.Filters
   alias FFT.Trucks
 
-  def index(conn, _params) do
-    trucks = Trucks.list()
+  def index(conn, %{"filter" => filter}) do
+    trucks =
+      filter
+      |> Filters.prepare()
+      |> Trucks.list()
 
     render(conn, "index.json", trucks: trucks)
   end
