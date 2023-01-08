@@ -1,4 +1,4 @@
-defmodule FftWeb.Endpoint do
+defmodule FFTWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :fft
 
   # The session will be stored in the cookie and signed,
@@ -39,5 +39,5 @@ defmodule FftWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
-  plug FftWeb.Router
+  plug FFTWeb.Router
 end

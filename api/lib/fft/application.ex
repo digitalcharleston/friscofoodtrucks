@@ -1,4 +1,4 @@
-defmodule Fft.Application do
+defmodule FFT.Application do
   # See https://hexdocs.pm/elixir/Application.html
   # for more information on OTP Applications
   @moduledoc false
@@ -9,18 +9,20 @@ defmodule Fft.Application do
   def start(_type, _args) do
     children = [
       # Start the Telemetry supervisor
-      FftWeb.Telemetry,
+      FFTWeb.Telemetry,
       # Start the PubSub system
-      {Phoenix.PubSub, name: Fft.PubSub},
+      {Phoenix.PubSub, name: FFT.PubSub},
       # Start the Endpoint (http/https)
-      FftWeb.Endpoint
-      # Start a worker by calling: Fft.Worker.start_link(arg)
-      # {Fft.Worker, arg}
+      FFTWeb.Endpoint,
+      # Start a worker by calling: FFT.Worker.start_link(arg)
+      # {FFT.Worker, arg}
+      {Finch, name: MyFinch},
+      FFT.Services.FoodTruckData
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: Fft.Supervisor]
+    opts = [strategy: :one_for_one, name: FFT.Supervisor]
     Supervisor.start_link(children, opts)
   end
 
@@ -28,7 +30,7 @@ defmodule Fft.Application do
   # whenever the application is updated.
   @impl true
   def config_change(changed, _new, removed) do
-    FftWeb.Endpoint.config_change(changed, removed)
+    FFTWeb.Endpoint.config_change(changed, removed)
     :ok
   end
 end

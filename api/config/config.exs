@@ -8,10 +8,10 @@
 import Config
 
 # Configures the endpoint
-config :fft, FftWeb.Endpoint,
+config :fft, FFTWeb.Endpoint,
   url: [host: "localhost"],
-  render_errors: [view: FftWeb.ErrorView, accepts: ~w(json), layout: false],
-  pubsub_server: Fft.PubSub,
+  render_errors: [view: FFTWeb.ErrorView, accepts: ~w(json), layout: false],
+  pubsub_server: FFT.PubSub,
   live_view: [signing_salt: "ANigHZTN"]
 
 # Configures Elixir's Logger
@@ -21,6 +21,8 @@ config :logger, :console,
 
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
+
+config :fft, :trucks_fetcher, FFT.Services.FoodTruckData.DataSFFetcher
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

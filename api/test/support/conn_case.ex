@@ -1,4 +1,4 @@
-defmodule FftWeb.ConnCase do
+defmodule FFTWeb.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -11,7 +11,7 @@ defmodule FftWeb.ConnCase do
   we enable the SQL sandbox, so changes done to the database
   are reverted at the end of every test. If you are using
   PostgreSQL, you can even run database tests asynchronously
-  by setting `use FftWeb.ConnCase, async: true`, although
+  by setting `use FFTWeb.ConnCase, async: true`, although
   this option is not recommended for other databases.
   """
 
@@ -22,12 +22,12 @@ defmodule FftWeb.ConnCase do
       # Import conveniences for testing with connections
       import Plug.Conn
       import Phoenix.ConnTest
-      import FftWeb.ConnCase
+      import FFTWeb.ConnCase
 
-      alias FftWeb.Router.Helpers, as: Routes
+      alias FFTWeb.Router.Helpers, as: Routes
 
       # The default endpoint for testing
-      @endpoint FftWeb.Endpoint
+      @endpoint FFTWeb.Endpoint
     end
   end
 

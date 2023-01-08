@@ -1,12 +1,12 @@
-defmodule FftWeb do
+defmodule FFTWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, views, channels and so on.
 
   This can be used in your application as:
 
-      use FftWeb, :controller
-      use FftWeb, :view
+      use FFTWeb, :controller
+      use FFTWeb, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -19,10 +19,10 @@ defmodule FftWeb do
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: FftWeb
+      use Phoenix.Controller, namespace: FFTWeb
 
       import Plug.Conn
-      alias FftWeb.Router.Helpers, as: Routes
+      alias FFTWeb.Router.Helpers, as: Routes
     end
   end
 
@@ -30,7 +30,7 @@ defmodule FftWeb do
     quote do
       use Phoenix.View,
         root: "lib/fft_web/templates",
-        namespace: FftWeb
+        namespace: FFTWeb
 
       # Import convenience functions from controllers
       import Phoenix.Controller,
@@ -61,8 +61,7 @@ defmodule FftWeb do
       # Import basic rendering functionality (render, render_layout, etc)
       import Phoenix.View
 
-      import FftWeb.ErrorHelpers
-      alias FftWeb.Router.Helpers, as: Routes
+      alias FFTWeb.Router.Helpers, as: Routes
     end
   end
 

@@ -1,5 +1,5 @@
-defmodule FftWeb.ErrorView do
-  use FftWeb, :view
+defmodule FFTWeb.ErrorView do
+  use FFTWeb, :view
 
   # If you want to customize a particular status code
   # for a certain format, you may uncomment below.

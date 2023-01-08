@@ -1,4 +1,4 @@
-defmodule FftWeb.ErrorHelpers do
+defmodule FFTWeb.ErrorHelpers do
   @moduledoc """
   Conveniences for translating and building error messages.
   """

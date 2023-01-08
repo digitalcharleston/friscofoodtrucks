@@ -1,6 +1,6 @@
-defmodule Fft do
+defmodule FFT do
   @moduledoc """
-  Fft keeps the contexts that define your domain
+  FFT keeps the contexts that define your domain
   and business logic.
 
   Contexts are also responsible for managing your data, regardless
