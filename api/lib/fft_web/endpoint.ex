@@ -40,7 +40,14 @@ defmodule FFTWeb.Endpoint do
   plug Plug.Head
   plug Plug.Session, @session_options
 
-  plug CORSPlug, origin: ["http://localhost:3000"]
+  plug CORSPlug,
+    origin: [
+      "http://localhost:3000",
+      "https://friscofoodtrucks.herokuapp.com",
+      "https://friscofoodtrucks.com",
+      "https://www.friscofoodtrucks.com"
+    ],
+    methods: ["GET", "POST", "OPTIONS"]
 
   plug FFTWeb.Router
 end
