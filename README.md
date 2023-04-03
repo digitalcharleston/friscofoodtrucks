@@ -19,10 +19,6 @@ There is no database. A future improvement might be to also store the data in a 
 
 There's also not a lot of error handling to maintain the stability of the site if things go wrong. Having the data backed up in a database would help with that. If the process crashed - probably due to an issue with fetching or parsing the data, such as if their service were down or they changed the fields - we should fall back to pulling the stored data into memory when the process is restarted.
 
-Two main issues held me up with this. The first one was a dumb mistake where I didn't name the GenServer when starting it up. Easy fix once I noticed it.
-
-The second was around mocking the call to DataSF with the timing of how the test suite is started. I solved it with a hack in the test.ex config, but given more time, I'd see if there were a better solution. (Or at least make that more elegant and extensible if that turned out to be the right way to go.)
-
 I didn't do much with the client other than throwing it together to actually show the data, test it out, and make it live.
 
 Thanks for looking!
